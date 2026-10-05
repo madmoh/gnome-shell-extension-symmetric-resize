@@ -1,5 +1,7 @@
 # Symmetric Resize
 
+[demo.webm](https://github.com/user-attachments/assets/9ff2b165-e9f7-4657-8f22-83886c01054b)
+
 Resize GNOME windows from the center or with a fixed aspect ratio while a modifier key is held.
 
 ## About
