@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.shell.extensions.symmetric-resize.modifier">
+    <value nick="disabled" value="0"/>
+    <value nick="shift" value="1"/>
+    <value nick="control" value="4"/>
+    <value nick="alt" value="8"/>
+    <value nick="super" value="67108928"/>
+  </enum>
+  <schema id="org.gnome.shell.extensions.symmetric-resize" path="/org/gnome/shell/extensions/symmetric-resize/">
+    <key name="center-modifier" enum="org.gnome.shell.extensions.symmetric-resize.modifier">
+      <default>'control'</default>
+      <summary>Resize from the center</summary>
+      <description>The modifier key that keeps the window center fixed while resizing.</description>
+    </key>
+    <key name="aspect-modifier" enum="org.gnome.shell.extensions.symmetric-resize.modifier">
+      <default>'shift'</default>
+      <summary>Keep the aspect ratio</summary>
+      <description>The modifier key that keeps the window aspect ratio while resizing.</description>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,9 @@
+{
+  "uuid": "symmetric-resize@madmoh.github.io",
+  "name": "Symmetric Resize",
+  "description": "Resize windows from the center with Ctrl and keep their aspect ratio with Shift. The modifier keys can be changed in the preferences.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.symmetric-resize",
+  "url": "https://github.com/madmoh/gnome-shell-extension-symmetric-resize",
+  "version-name": "1.0.0"
+}
