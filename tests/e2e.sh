@@ -23,7 +23,7 @@ if [ -z "${SYMMETRIC_RESIZE_E2E:-}" ]; then
     mkdir -p "$extensions/e2e@symmetric-resize" "$tmp/config/glib-2.0/settings"
     cp -r "$root/src" "$extensions/$uuid"
     glib-compile-schemas "$extensions/$uuid/schemas"
-    printf '{"uuid": "e2e@symmetric-resize", "name": "E2E", "description": "E2E", "shell-version": ["50"]}\n' >"$extensions/e2e@symmetric-resize/metadata.json"
+    printf '{"uuid": "e2e@symmetric-resize", "name": "E2E", "description": "E2E", "shell-version": ["49", "50", "51"]}\n' >"$extensions/e2e@symmetric-resize/metadata.json"
     printf 'export default class { enable() { global.context.unsafe_mode = true; } disable() {} }\n' >"$extensions/e2e@symmetric-resize/extension.js"
     cat >"$tmp/config/glib-2.0/settings/keyfile" <<EOF
 [org/gnome/shell]
@@ -77,7 +77,7 @@ wait_for "global.get_window_actors().some(a => a.meta_window.title === 'Symmetri
 evaluate "$(cat <<EOF
 (() => {
     const {Clutter, GLib} = imports.gi;
-    const seat = Clutter.get_default_backend().get_default_seat();
+    const seat = global.stage.context.get_backend().get_default_seat();
     const pointer = seat.create_virtual_device(Clutter.InputDeviceType.POINTER_DEVICE);
     const keyboard = seat.create_virtual_device(Clutter.InputDeviceType.KEYBOARD_DEVICE);
     const window = global.get_window_actors().map(a => a.meta_window).find(w => w.title === 'Symmetric Resize E2E');
